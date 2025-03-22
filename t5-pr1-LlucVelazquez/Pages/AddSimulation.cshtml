@@ -1,0 +1,42 @@
+﻿@page
+@model t5_pr1_LlucVelazquez.Pages.AddSimulationModel
+@{
+	ViewData["Title"] = "Afegeix nova simulacio";
+}
+<h1>Afegir una nova Simulacio</h1>
+<form method="post">
+	<div class="form-group">
+		<label asp-for="NewSimulation.TypeSim"></label>
+		<select name="NewSimulation.TypeSim" id="NewSimulation.TypeSim">
+			<option value="Sistema Solar">Sistema Solar</option>
+			<option value="Sisteme Eolic">Sistema Eolic</option>
+			<option value="Sistema Hidroelectric">Sistema Hidroelectric</option>
+		</select>
+		<span asp-validation-for="NewSimulation.TypeSim"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="NewSimulation.Valor"></label>
+		<input asp-for="NewSimulation.Valor" class="form-control" />
+		<span asp-validation-for="NewSimulation.Valor" class="alert-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="NewSimulation.Rati"></label>
+		<input asp-for="NewSimulation.Rati" class="form-control" />
+		<span asp-validation-for="NewSimulation.Rati" class="alert-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="NewSimulation.Cost"></label>
+		<input asp-for="NewSimulation.Cost" class="form-control" />
+		<span asp-validation-for="NewSimulation.Cost" class="alert-danger"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="NewSimulation.Preu"></label>
+		<input asp-for="NewSimulation.Preu" class="form-control" />
+		<span asp-validation-for="NewSimulation.Preu" class="alert-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Afegir</button>
+</form>
+
+@section Scripts{
+	<partial name="_ValidationScriptsPartial" />
+}
