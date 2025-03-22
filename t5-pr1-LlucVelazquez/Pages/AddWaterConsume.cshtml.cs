@@ -5,7 +5,7 @@ using t5_pr1_LlucVelazquez.Model;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace t4_pr1_LlucVelazquez.Pages
+namespace t5_pr1_LlucVelazquez.Pages
 {
     public class AddWaterConsumeModel : PageModel
     {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
 using t5_pr1_LlucVelazquez.Model;
 
-namespace t4_pr1_LlucVelazquez.Pages
+namespace t5_pr1_LlucVelazquez.Pages
 {
     public class AddSimulationModel : PageModel
     {

@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Text.Json;
 using System;
 
-namespace t4_pr1_LlucVelazquez.Pages
+namespace t5_pr1_LlucVelazquez.Pages
 {
     public class AddEnergyIndicatorModel : PageModel
     {
