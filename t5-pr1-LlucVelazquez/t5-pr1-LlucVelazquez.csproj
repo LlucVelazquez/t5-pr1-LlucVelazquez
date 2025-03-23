@@ -10,7 +10,6 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Data\" />
-    <Folder Include="Model\" />
     <Folder Include="Views\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
