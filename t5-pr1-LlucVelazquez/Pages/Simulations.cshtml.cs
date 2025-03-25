@@ -5,7 +5,6 @@ using FileWorking = System.IO;
 using System.Diagnostics;
 using System.Globalization;
 using System.Formats.Asn1;
-using CsvHelper;
 
 namespace t5_pr1_LlucVelazquez.Pages
 {
