@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace t5_pr1_LlucVelazquez.ModelP
 {
 	public class Simulation
 	{
 		[Key]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		public string TypeSim { get; set; }
 		public float HoresSol { get; set; }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using t5_pr1_LlucVelazquez.Model;
+using t5_pr1_LlucVelazquez.ModelP;
 
 namespace t5_pr1_LlucVelazquez.Data
 {
