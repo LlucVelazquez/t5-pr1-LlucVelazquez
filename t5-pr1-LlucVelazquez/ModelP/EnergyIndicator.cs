@@ -10,9 +10,9 @@ namespace t5_pr1_LlucVelazquez.ModelP
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 		public int Id { get; set; }
 		public int Year { get; set; }
-		public decimal ProdNeta { get; set; }
-		public decimal ConsumGasoil { get; set; }
-		public decimal DemandaElectr { get; set; }
-		public decimal ProdDisp { get; set; }
+		public float ProdNeta { get; set; }
+		public float ConsumGasoil { get; set; }
+		public float DemandaElectr { get; set; }
+		public float ProdDisp { get; set; }
 	}
 }

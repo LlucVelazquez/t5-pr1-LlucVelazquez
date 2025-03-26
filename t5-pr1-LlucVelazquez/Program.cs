@@ -1,6 +1,7 @@
 using t5_pr1_LlucVelazquez.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
+using System;
 
 namespace t5_pr1_LlucVelazquez
 {
@@ -10,6 +11,10 @@ namespace t5_pr1_LlucVelazquez
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
+			builder.Services.AddDbContext<ApplicationDBContext>(
+					options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")),
+					ServiceLifetime.Scoped
+				);
 
 			// Add services to the container.
 			builder.Services.AddRazorPages();
