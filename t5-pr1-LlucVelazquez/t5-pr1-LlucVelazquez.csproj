@@ -8,15 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\**" />
-    <Content Remove="Views\**" />
-    <EmbeddedResource Remove="Views\**" />
-    <None Remove="Views\**" />
+    <Compile Remove="ModelP\**" />
+    <Content Remove="ModelP\**" />
+    <EmbeddedResource Remove="ModelP\**" />
+    <None Remove="ModelP\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="ModelP\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
