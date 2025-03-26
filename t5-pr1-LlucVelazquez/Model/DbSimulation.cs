@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace t5_pr1_LlucVelazquez.ModelP
+namespace t5_pr1_LlucVelazquez.Model
 {
-	public class Simulation
+	public class DbSimulation
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]

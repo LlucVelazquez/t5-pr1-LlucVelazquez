@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using t5_pr1_LlucVelazquez.ModelP;
+using t5_pr1_LlucVelazquez.Model;
 
 namespace t5_pr1_LlucVelazquez.Data
 {
 	public class ApplicationDBContext : DbContext
 	{
-		public DbSet<Simulation> Simulations { get; set; }
-        public DbSet<EnergyIndicator> EnergyIndicators { get; set; }
-		public DbSet<WaterConsume> WaterConsumes { get; set; }
+		public DbSet<DbSimulation> Simulations { get; set; }
+        public DbSet<DbEnergyIndicator> EnergyIndicators { get; set; }
+		public DbSet<DbWaterConsume> WaterConsumes { get; set; }
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options) { }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
