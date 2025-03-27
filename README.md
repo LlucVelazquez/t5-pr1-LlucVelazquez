@@ -38,5 +38,6 @@ at Microsoft.VisualStudio.Web.CodeGeneration.CodeGenCommand.Execute(String[] arg
 
 jerZaw - (04/01/2022) - How to seed data in .NET Core 6 with Entity Framework? - Stackoverflow - [link](https://stackoverflow.com/questions/70581816/how-to-seed-data-in-net-core-6-with-entity-framework)
 
+
 "sobre el script exportacio no entenc a que et ref"
 
