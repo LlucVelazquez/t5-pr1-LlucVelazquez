@@ -2,19 +2,22 @@
 
 # **1. Esquemes ORM**
 
-L'esquema del meu projecte es: la carpeta *Controllers* On estan els controladors, *Data* on esta la AppDbContext, *Migrations* Carpeta creada automaticament a l'hora de fer la migracio, *Model* On estan les clases, *ModelData* Els arxius 
+L'esquema del meu projecte es: la carpeta *Controllers* On estan els controladors, *Data* on esta la AppDbContext, *Migrations* Carpeta creada automaticament a l'hora de fer la migracio, *Model* On estan les clases, *ModelData* Els arxius amb dades, *Pages* Pagines
+on estaben les vistes dels arxius que hi han al ModelData, tambe esta la carpeta *Shared* on esta el layout, *Views* Pagina on estan les vistes de les base de dades.
 
 # **2. GitHub Project**
 
 [Projecte](https://github.com/users/LlucVelazquez/projects/8)
 
-Branca FirstSteps - Es la primera branca, on he copiat el projecte anterior, he creat les coses del començament abans de fer els controladors
+Branca FirstSteps - Es la primera branca, on he copiat el projecte anterior, he creat les coses del començament abans de fer els controladors.
 
 Branca SimulationsController - Aqui es on he creat el controlador i la vista per la pagina Simulacions.
 
 Branca WaterConsumController - Aqui es on he creat el controlador i la vista per la pagina Consums d'aigua.
 
 Branca EnergyIndicatorsController - Aqui es on he creat el controlador i la vista per la pagina Indicadors Energetics.
+
+Branca LastSteps - Es la ultima branca, creada per fer els ultims retocs al projecte.
 
 
 # **Solució del sistema**
