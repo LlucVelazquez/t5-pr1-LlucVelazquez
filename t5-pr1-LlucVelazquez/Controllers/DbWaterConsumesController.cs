@@ -12,17 +12,17 @@ using System.Data;
 
 namespace t5_pr1_LlucVelazquez.Controllers
 {
-    [Route("DbWaterConsume")]
-    public class DbWaterConsumeController : Controller
+    [Route("DbWaterConsumes")]
+    public class DbWaterConsumesController : Controller
     {
         private readonly ApplicationDBContext _context;
 
-        public DbWaterConsumeController(ApplicationDBContext context)
+        public DbWaterConsumesController(ApplicationDBContext context)
         {
             _context = context;
         }
-
-        // GET: DbWaterConsume
+        
+        // GET: DbWaterConsumes
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> Index()
