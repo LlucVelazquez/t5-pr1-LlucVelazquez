@@ -37,3 +37,6 @@ at Microsoft.VisualStudio.Web.CodeGeneration.CodeGenCommand.Execute(String[] arg
 11 contributors - (08/11/2024) - Herramientas de Entity Framework Core: CLI de .NET Core - Microsoft [link](https://learn.microsoft.com/es-es/ef/core/cli/dotnet)
 
 jerZaw - (04/01/2022) - How to seed data in .NET Core 6 with Entity Framework? - Stackoverflow - [link](https://stackoverflow.com/questions/70581816/how-to-seed-data-in-net-core-6-with-entity-framework)
+
+"sobre el script exportacio no entenc a que et ref"
+
