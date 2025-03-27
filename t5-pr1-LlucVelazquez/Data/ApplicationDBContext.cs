@@ -18,5 +18,11 @@ namespace t5_pr1_LlucVelazquez.Data
             string connectionString = config.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(connectionString);
         }
-    }
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<DbSimulation>().ToTable("Simulations");
+			modelBuilder.Entity<DbEnergyIndicator>().ToTable("EnergyIndicators");
+			modelBuilder.Entity<DbWaterConsume>().ToTable("WaterConsumes");
+		}
+	}
 }
