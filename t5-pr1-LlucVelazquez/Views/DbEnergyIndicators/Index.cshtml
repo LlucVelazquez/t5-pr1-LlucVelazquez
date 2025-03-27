@@ -1,0 +1,63 @@
+﻿﻿
+@model IEnumerable<t5_pr1_LlucVelazquez.Model.DbEnergyIndicator>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<div class="text-center">
+    <h1 class="display-4">Simulacions</h1>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nou</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdNeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConsumGasoil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DemandaElectr)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProdDisp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdNeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsumGasoil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DemandaElectr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProdDisp)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalls</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,55 @@
+﻿﻿
+@model t5_pr1_LlucVelazquez.Model.DbEnergyIndicator
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<h1>Editar</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Year" class="control-label">Any</label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdNeta" class="control-label">Produccio Neta</label>
+                <input asp-for="ProdNeta" class="form-control" />
+                <span asp-validation-for="ProdNeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConsumGasoil" class="control-label">Consum Gasolina</label>
+                <input asp-for="ConsumGasoil" class="form-control" />
+                <span asp-validation-for="ConsumGasoil" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DemandaElectr" class="control-label">Demanda Electrica</label>
+                <input asp-for="DemandaElectr" class="form-control" />
+                <span asp-validation-for="DemandaElectr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProdDisp" class="control-label">Produccio Disponible</label>
+                <input asp-for="ProdDisp" class="form-control" />
+                <span asp-validation-for="ProdDisp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Tornar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

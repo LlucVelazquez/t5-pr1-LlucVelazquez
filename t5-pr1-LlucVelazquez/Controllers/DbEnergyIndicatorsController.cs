@@ -12,25 +12,25 @@ using System.Data;
 
 namespace t5_pr1_LlucVelazquez.Controllers
 {
-    [Route("DbSimulations")]
-    public class DbSimulationsController : Controller
+    [Route("DbEnergyIndicators")]
+    public class DbEnergyIndicatorsController : Controller
     {
         private readonly ApplicationDBContext _context;
 
-        public DbSimulationsController(ApplicationDBContext context)
+        public DbEnergyIndicatorsController(ApplicationDBContext context)
         {
             _context = context;
         }
 
-        // GET: DbSimulations
+        // GET: DbEnergyIndicators
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Simulations.ToListAsync());
+            return View(await _context.EnergyIndicators.ToListAsync());
         }
 
-        // GET: DbSimulations/Details/5
+        // GET: DbEnergyIndicators/Details/5
         [HttpGet]
         [Route("Details/{id}")]
         public async Task<IActionResult> Details(int? id)
@@ -40,17 +40,17 @@ namespace t5_pr1_LlucVelazquez.Controllers
                 return NotFound();
             }
 
-            var dbSimulation = await _context.Simulations
+            var dbEnergyIndicators = await _context.EnergyIndicators
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dbSimulation == null)
+            if (dbEnergyIndicators == null)
             {
                 return NotFound();
             }
 
-            return View(dbSimulation);
+            return View(dbEnergyIndicators);
         }
 
-        // GET: DbSimulations/Create
+        // GET: DbEnergyIndicators/Create
         [HttpGet]
         [Route("Create")]
         public IActionResult Create()
@@ -58,18 +58,18 @@ namespace t5_pr1_LlucVelazquez.Controllers
             return View();
         }
 
-        // POST: DbSimulations/Create
+        // POST: DbEnergyIndicators/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Route("Create")]
-        public async Task<IActionResult> Create([Bind("TypeSim,HoresSol,VelocitatVent,CabalAigua,Rati,EnergyGen,CostTotal,PreuTotal,DateT")] DbSimulation dbSimulation)
+        public async Task<IActionResult> Create([Bind("Year,ProdNeta,ConsumGasoil,DemandaElectr,ProdDisp")] DbEnergyIndicator dbEnergyIndicator)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(dbSimulation);
+                    _context.Add(dbEnergyIndicator);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
@@ -78,10 +78,10 @@ namespace t5_pr1_LlucVelazquez.Controllers
             {
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
-            return View(dbSimulation);
+            return View(dbEnergyIndicator);
         }
 
-        // GET: DbSimulations/Edit/5
+        // GET:DbEnergyIndicator/Edit/5
         [HttpGet]
         [Route("Edit/{id}")]
         public async Task<IActionResult> Edit(int? id)
@@ -91,36 +91,36 @@ namespace t5_pr1_LlucVelazquez.Controllers
                 return NotFound();
             }
 
-            var dbSimulation = await _context.Simulations.FindAsync(id);
-            if (dbSimulation == null)
+            var dbEnergyIndicator = await _context.EnergyIndicators.FindAsync(id);
+            if (dbEnergyIndicator == null)
             {
                 return NotFound();
             }
-            return View(dbSimulation);
+            return View(dbEnergyIndicator);
         }
 
-        // POST: DbSimulations/Edit/5
+        // POST: DbEnergyIndicator/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [Route("Edit/{id}")]
-        public async Task<IActionResult> Edit(int id, [Bind("TypeSim,HoresSol,VelocitatVent,CabalAigua,Rati,EnergyGen,CostTotal,PreuTotal,DateT")] DbSimulation dbSimulation)
+        public async Task<IActionResult> Edit(int id, [Bind("Year,ProdNeta,ConsumGasoil,DemandaElectr,ProdDisp")] DbEnergyIndicator dbEnergyIndicator)
         {
-			/*if (id != dbSimulation.Id)
+            /*if (id != dbEnergyIndicator.Id)
             {
                 return NotFound();
             }*/
-            dbSimulation.Id = id;
+            dbEnergyIndicator.Id = id;
 			if (ModelState.IsValid)
             {
 				try
                 {
-                    _context.Update(dbSimulation);
+                    _context.Update(dbEnergyIndicator);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-					if (!DbSimulationExists(dbSimulation.Id))
+					if (!DbEnergyIndicatorExists(dbEnergyIndicator.Id))
                     {
                         return NotFound();
                     }
@@ -131,10 +131,10 @@ namespace t5_pr1_LlucVelazquez.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(dbSimulation);
+            return View(dbEnergyIndicator);
         }
 
-        // GET: DbSimulations/Delete/5
+        // GET: DbEnergyIndicator/Delete/5
         [HttpGet]
         [Route("Delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
@@ -144,34 +144,34 @@ namespace t5_pr1_LlucVelazquez.Controllers
                 return NotFound();
             }
 
-            var dbSimulation = await _context.Simulations
+            var dbEnergyIndicator = await _context.EnergyIndicators
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (dbSimulation == null)
+            if (dbEnergyIndicator == null)
             {
                 return NotFound();
             }
 
-            return View(dbSimulation);
+            return View(dbEnergyIndicator);
         }
 
-        // POST: DbSimulations/Delete/5
+        // POST: DbEnergyIndicator/Delete/5
         [HttpPost, ActionName("Delete")]
         [Route("Delete/{id}")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dbSimulation = await _context.Simulations.FindAsync(id);
-            if (dbSimulation != null)
+            var dbEnergyIndicator = await _context.EnergyIndicators.FindAsync(id);
+            if (dbEnergyIndicator != null)
             {
-                _context.Simulations.Remove(dbSimulation);
+                _context.EnergyIndicators.Remove(dbEnergyIndicator);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DbSimulationExists(int id)
+        private bool DbEnergyIndicatorExists(int id)
         {
-            return _context.Simulations.Any(e => e.Id == id);
+            return _context.EnergyIndicators.Any(e => e.Id == id);
         }
     }
 }
