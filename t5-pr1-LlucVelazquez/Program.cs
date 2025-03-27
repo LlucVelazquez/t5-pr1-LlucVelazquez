@@ -33,8 +33,16 @@ namespace t5_pr1_LlucVelazquez
 			app.UseStaticFiles();
 
 			app.UseRouting();
+			app.UseEndpoints(endpoints =>
+			{
+				endpoints.MapControllers();
+				endpoints.MapControllerRoute(
+					name: "default",
+					pattern: "{controller=Home}/{action=Index}/{id?}"
+				);
+			});
 
-			app.UseAuthorization();
+			//app.UseAuthorization();
 
 			app.MapRazorPages();
 

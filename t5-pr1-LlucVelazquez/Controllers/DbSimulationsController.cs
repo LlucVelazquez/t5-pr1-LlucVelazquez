@@ -65,7 +65,6 @@ namespace t5_pr1_LlucVelazquez.Controllers
         [Route("Create")]
         public async Task<IActionResult> Create([Bind("TypeSim,HoresSol,VelocitatVent,CabalAigua,Rati,EnergyGen,CostTotal,PreuTotal,DateT")] DbSimulation dbSimulation)
         {
-            Debug.WriteLine("?:           ------------------------- Start Create Task");
             try
             {
                 if (ModelState.IsValid)
@@ -77,7 +76,6 @@ namespace t5_pr1_LlucVelazquez.Controllers
             }
             catch (DataException ex)
             {
-                Debug.WriteLine("?: Data Exception: " + ex);
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
             return View(dbSimulation);
@@ -108,21 +106,24 @@ namespace t5_pr1_LlucVelazquez.Controllers
         [Route("Edit/{id}")]
         public async Task<IActionResult> Edit(int id, [Bind("TypeSim,HoresSol,VelocitatVent,CabalAigua,Rati,EnergyGen,CostTotal,PreuTotal,DateT")] DbSimulation dbSimulation)
         {
-            if (id != dbSimulation.Id)
+            Debug.WriteLine("-------------------------------- Edit");
+			/*if (id != dbSimulation.Id)
             {
                 return NotFound();
-            }
-
-            if (ModelState.IsValid)
+            }*/
+            dbSimulation.Id = id;
+			Debug.WriteLine("------------------------------------- SiEdit");
+			if (ModelState.IsValid)
             {
-                try
+                Debug.WriteLine("------------------------------------- ModelState.IsValid");
+				try
                 {
                     _context.Update(dbSimulation);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DbSimulationExists(dbSimulation.Id))
+					if (!DbSimulationExists(dbSimulation.Id))
                     {
                         return NotFound();
                     }

@@ -16,6 +16,6 @@ namespace t5_pr1_LlucVelazquez.Model
 		public float EnergyGen { get; set; }
 		public float CostTotal { get; set; }
 		public float PreuTotal { get; set; }
-		public DateTime DateT { get; set; }
+		public DateTime DateT { get; set; } = DateTime.Now;
 	}
 }
