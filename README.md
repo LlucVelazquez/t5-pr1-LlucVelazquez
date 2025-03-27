@@ -1,4 +1,4 @@
-# T5. PR1. Pràctica 2 \- Documentació
+# T5. PR1. Pràctica 1 \- Documentació
 
 # **1. Esquemes ORM**
 
