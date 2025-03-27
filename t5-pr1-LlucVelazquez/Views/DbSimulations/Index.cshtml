@@ -1,0 +1,87 @@
+﻿﻿
+@model IEnumerable<t5_pr1_LlucVelazquez.Model.DbSimulation>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+}
+
+<div class="text-center">
+    <h1 class="display-4">Simulacions</h1>
+</div>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nou</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeSim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HoresSol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VelocitatVent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CabalAigua)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rati)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnergyGen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PreuTotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeSim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoresSol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VelocitatVent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabalAigua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnergyGen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PreuTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateT)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Detalls</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
